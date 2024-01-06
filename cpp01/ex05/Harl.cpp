@@ -6,7 +6,7 @@
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 16:11:57 by aamhal            #+#    #+#             */
-/*   Updated: 2024/01/06 15:13:01 by aamhal           ###   ########.fr       */
+/*   Updated: 2024/01/06 18:02:18 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,24 @@ void Harl::error() {
     std::cout << "ERROR: This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
+int findLevel(std::string tab[], std::string level)
+{
+    int i = 0;
+    while (i < 4)
+    {
+        if (tab[i] == level)
+            return i;
+        i++;
+    }
+    std::cout << "unknown message : " << level << std::endl;
+        return -1;
+}
+
 void Harl::complain(std::string level)
 {
-    void (Harl::*ptrToFunc)();
-    if (level == "DEBUG")
-        ptrToFunc = &Harl::debug;
-    else if (level == "INFO")
-        ptrToFunc = &Harl::info;
-    else if (level == "WARNING")
-        ptrToFunc = &Harl::warning;
-    else if (level == "ERROR")
-        ptrToFunc = &Harl::error;
-    else
-    {
-        std::cout << "unknown message : " << level << std::endl;
-        return ;
-    }
-   (this->*ptrToFunc)();
+    void (Harl::*ptrToFunc[4])() = {&Harl::debug,&Harl::error,&Harl::info,&Harl::warning};
+    std::string tab[4] = {"DEBUG", "ERROR", "INFO", "WARNING"};
+    int index = findLevel(tab, level);
+    if (index != -1)
+   (this->*ptrToFunc[index])();
 }

@@ -6,7 +6,7 @@
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 16:11:51 by aamhal            #+#    #+#             */
-/*   Updated: 2024/01/06 15:15:52 by aamhal           ###   ########.fr       */
+/*   Updated: 2024/01/06 18:02:45 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int main()
 {
 	Harl myHarl;
-	myHarl.complain("ERROR");
+	myHarl.complain("WARNING");
 }
