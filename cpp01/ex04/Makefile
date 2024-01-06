@@ -1,7 +1,7 @@
 NAME = replace
 CC = c++
 FLAGS = -Wall -Wextra -Werror
-SOURCE = main.cpp 
+SOURCE = main.cpp replace.cpp
 OBJS = $(SOURCE:.cpp=.o)
 
 all: $(NAME)

@@ -6,27 +6,12 @@
 /*   By: aamhal <aamhal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 16:18:28 by aamhal            #+#    #+#             */
-/*   Updated: 2023/12/27 20:24:56 by aamhal           ###   ########.fr       */
+/*   Updated: 2024/01/06 17:35:36 by aamhal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace.hpp"
 
-std::string replace_strings(const std::string &buff, const std::string s1, const std::string s2)
-{
-    std::string s;
-    for (size_t i = 0 ; i < buff.length(); i++)
-    {
-        if (buff.substr(i, s1.length()) == s1)
-        {
-            s += s2;
-            i += s2.length() - 1; 
-        }
-        else
-            s += buff[i];
-    }
-    return (s);
-}
 
 int main (int ac, char **av)
 {
